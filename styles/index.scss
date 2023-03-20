@@ -25,6 +25,7 @@ body {
       background-color: $white;
       padding: $padding;
       width: 327px;
+      border-radius: $container-radius;
       form.game-mode-selection {
         p.title {
           margin-bottom: 11px;
@@ -59,6 +60,18 @@ body {
             input[type="radio"]:checked + label.input-label {
               background-color: $more-dark;
             }
+          }
+        }
+
+        div.input-container {
+          button.btn {
+            font-size: 1em;
+            width: 100%;
+            display: block;
+            padding: 0.9em;
+            background-color: $yellowish-color;
+            color: $white;
+            border-radius: $border-radius;
           }
         }
       }

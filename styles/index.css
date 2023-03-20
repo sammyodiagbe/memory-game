@@ -32,6 +32,7 @@ body div.container div.form-container {
   background-color: #fcfcfc;
   padding: 24px;
   width: 327px;
+  border-radius: 12px;
 }
 
 body div.container div.form-container form.game-mode-selection p.title {
@@ -77,5 +78,15 @@ body div.container div.form-container form.game-mode-selection div.inputs-field 
 
 body div.container div.form-container form.game-mode-selection div.inputs-field div.input input[type="radio"]:checked + label.input-label {
   background-color: #152958;
+}
+
+body div.container div.form-container form.game-mode-selection div.input-container button.btn {
+  font-size: 1em;
+  width: 100%;
+  display: block;
+  padding: 0.9em;
+  background-color: #fda214;
+  color: #fcfcfc;
+  border-radius: 50vh;
 }
 /*# sourceMappingURL=index.css.map */
