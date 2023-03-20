@@ -1,4 +1,5 @@
 import GameDataProvider from "../context/game-brain";
+import "../styles/index.css";
 
 function MyApp({ Component, pageProps }) {
   return (

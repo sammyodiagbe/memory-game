@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+body div.container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #152958;
+}
+
+body div.container div.form-container {
+  background-color: #fcfcfc;
+  padding: 24px;
+  width: 327px;
+}
+
+body div.container div.form-container form.game-mode-selection p.title {
+  margin-bottom: 11px;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field {
+  margin-bottom: 24px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field.theme {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field.players {
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field.size {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field div.input input[type="radio"] {
+  visibility: hidden;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field div.input input[type="radio"] + label.input-label {
+  display: inline-block;
+  padding: 0.7em 0.7em;
+  background: #7191a5;
+  width: 100%;
+  text-align: center;
+  color: #fcfcfc;
+  border-radius: 50vh;
+}
+
+body div.container div.form-container form.game-mode-selection div.inputs-field div.input input[type="radio"]:checked + label.input-label {
+  background-color: #152958;
+}
+/*# sourceMappingURL=index.css.map */
