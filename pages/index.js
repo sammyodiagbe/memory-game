@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { gameData } from "../context/game-brain";
+import { useRouter } from "next/router";
 
 const Home = () => {
   const [theme, setTheme] = useState("Numbers");
   const [noOfPlayers, setNoOfPlayers] = useState(1);
   const [gridSize, setGridSize] = useState(4);
+  const { initializeGame } = useContext(gameData);
+  const router = useRouter();
 
   const updateTheme = (event) => {
     const { value } = event.target;
@@ -19,10 +23,17 @@ const Home = () => {
     const { value } = event.target;
     setGridSize(parseInt(value));
   };
+
+  const startGame = (event) => {
+    event.preventDefault();
+
+    initializeGame(theme, noOfPlayers, gridSize);
+    router.push("/game");
+  };
   return (
     <div className="container">
       <div className="form-container">
-        <form className="game-mode-selection">
+        <form className="game-mode-selection" onSubmit={startGame}>
           <p className="title">Select Theme</p>
           <div className="inputs-field theme">
             <div className="input">
