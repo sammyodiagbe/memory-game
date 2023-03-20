@@ -10,9 +10,11 @@ const GameScreen = () => {
       <div className="row" key={index}>
         {entry.map((btn, ind) => {
           return (
-            <button className="entry btn" key={ind}>
-              {btn}
-            </button>
+            <button
+              className="entry btn"
+              key={ind}
+              data-cor={{ x: ind, y: ind }}
+            ></button>
           );
         })}
       </div>
