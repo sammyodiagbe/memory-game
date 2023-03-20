@@ -106,6 +106,28 @@ body div.container-game div.game-screen {
       grid-template-rows: max-content 1fr max-content;
 }
 
+body div.container-game div.game-screen nav.navigation {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body div.container-game div.game-screen nav.navigation button.menu-btn {
+  padding: 0.7em 24px;
+  background-color: #fda214;
+  color: #fcfcfc;
+  font-weight: bold;
+  font-size: 0.9em;
+  border-radius: 50vh;
+}
+
 body div.container-game div.game-screen section.game-board-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,5 +177,41 @@ body div.container-game div.game-screen section.game-board-container div.board.g
   width: 72.53px;
   border-radius: 50vw;
   background: #152958;
+}
+
+body div.container-game div.game-screen footer.footer {
+  padding: 24px;
+}
+
+body div.container-game div.game-screen footer.footer div.solo-player {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+body div.container-game div.game-screen footer.footer div.solo-player div.time {
+  padding: 24px 0;
+  border-radius: 12px;
+  background-color: #bcced9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body div.container-game div.game-screen footer.footer div.solo-player div.time p {
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=index.css.map */
