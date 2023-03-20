@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import GameDataProvider from "../context/game-brain";
 
 function MyApp({ Component, pageProps }) {
