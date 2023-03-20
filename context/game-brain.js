@@ -7,6 +7,11 @@ const GameDataProvider = ({ children }) => {
   const [useIcon, setUseIcon] = useState(false);
   const [board, setBoard] = useState(null);
   const [numberOfPlayers, setNumberOfPlayers] = useState(1);
+  const [firstSelection, setFirstSelection] = useState(null);
+  const [secondSelection, setSecondSelection] = useState(null);
+  const [gridSize, setGridSize] = useState(4);
+
+  const makeSelection = (coordinate) => {};
 
   const initializeGame = (theme, noOfPlayers, grid) => {
     if (theme !== "Numbers") {
@@ -20,6 +25,7 @@ const GameDataProvider = ({ children }) => {
 
     let board = grid === 4 ? fourByFour : sixBysix;
     setBoard(board);
+    setGridSize(grid);
   };
 
   const sixBysix = () => {
@@ -35,7 +41,7 @@ const GameDataProvider = ({ children }) => {
 
   const fourByFour = () => {
     return [
-      [0, 0, 0, 0],
+      [0, 0, 1, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
@@ -49,6 +55,7 @@ const GameDataProvider = ({ children }) => {
         board,
         numberOfPlayers,
         initializeGame,
+        gridSize,
       }}
     >
       {children}
