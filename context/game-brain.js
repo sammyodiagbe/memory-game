@@ -10,6 +10,9 @@ const GameDataProvider = ({ children }) => {
   const [firstSelection, setFirstSelection] = useState(null);
   const [secondSelection, setSecondSelection] = useState(null);
   const [gridSize, setGridSize] = useState(4);
+  const [players, setPlayers] = useState([0, 0, 0, 0]);
+  const [playersMatch, setPlayersMatch] = useState([0, 0, 0, 0]);
+  const [soloPlayerMoves, setSoloPlayerMoves] = useState(0);
 
   const makeSelection = (coordinate) => {};
 
@@ -56,6 +59,7 @@ const GameDataProvider = ({ children }) => {
         numberOfPlayers,
         initializeGame,
         gridSize,
+        soloPlayerMoves,
       }}
     >
       {children}

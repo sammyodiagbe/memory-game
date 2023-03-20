@@ -77,4 +77,43 @@ body {
       }
     }
   }
+
+  div.container-game {
+    height: 100vh;
+    width: 100vw;
+
+    div.game-screen {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: max-content 1fr max-content;
+
+      section.game-board-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div.grid4x4,
+        div.grid6x6 {
+          div.row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: space-evenly;
+            column-gap: 13px;
+          }
+          &.grid4x4 {
+            div.row {
+              padding: 15px 0;
+              button.entry {
+                height: 72.53px;
+                width: 72.53px;
+                border-radius: 50vw;
+                background: $more-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

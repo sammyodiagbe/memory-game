@@ -89,4 +89,58 @@ body div.container div.form-container form.game-mode-selection div.input-contain
   color: #fcfcfc;
   border-radius: 50vh;
 }
+
+body div.container-game {
+  height: 100vh;
+  width: 100vw;
+}
+
+body div.container-game div.game-screen {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-rows: max-content 1fr max-content;
+}
+
+body div.container-game div.game-screen section.game-board-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body div.container-game div.game-screen section.game-board-container div.grid4x4 div.row,
+body div.container-game div.game-screen section.game-board-container div.grid6x6 div.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-column-gap: 13px;
+          column-gap: 13px;
+}
+
+body div.container-game div.game-screen section.game-board-container div.grid4x4.grid4x4 div.row,
+body div.container-game div.game-screen section.game-board-container div.grid6x6.grid4x4 div.row {
+  padding: 15px 0;
+}
+
+body div.container-game div.game-screen section.game-board-container div.grid4x4.grid4x4 div.row button.entry,
+body div.container-game div.game-screen section.game-board-container div.grid6x6.grid4x4 div.row button.entry {
+  height: 72.53px;
+  width: 72.53px;
+  border-radius: 50vw;
+  background: #152958;
+}
 /*# sourceMappingURL=index.css.map */

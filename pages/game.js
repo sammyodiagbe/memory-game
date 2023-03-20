@@ -5,8 +5,6 @@ const GameScreen = () => {
   const { board, gridSize, numberOfPlayers, isSolo, soloPlayerMoves } =
     useContext(gameData);
 
-  console.log(soloPlayerMoves);
-
   const entryStructure = board.map((entry, index) => {
     return (
       <div className="row" key={index}>
