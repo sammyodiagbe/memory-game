@@ -3,6 +3,7 @@ const Home = () => {
     <div className="container">
       <div className="form-container">
         <form className="game-mode-selection">
+          <h3 className="title">Select Theme</h3>
           <div className="inputs-field">
             <div className="input">
               <input
@@ -25,10 +26,12 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="game-theme-icons" className="input-label">
-                Numbers
+                Icons
               </label>
             </div>
           </div>
+          <h3 className="title">Select Number of Players</h3>
+
           <div className="inputs-field">
             <div className="input">
               <input
@@ -39,7 +42,7 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="one-player" className="input-label">
-                Numbers
+                1
               </label>
             </div>
             <div className="input">
@@ -51,7 +54,7 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="two-player" className="input-label">
-                Numbers
+                2
               </label>
             </div>
             <div className="input">
@@ -63,7 +66,7 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="three-player" className="input-label">
-                Numbers
+                3
               </label>
             </div>
             <div className="input">
@@ -75,10 +78,12 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="four-player" className="input-label">
-                Numbers
+                4
               </label>
             </div>
           </div>
+          <h3 className="title">Grid Size</h3>
+
           <div className="inputs-field">
             <div className="input">
               <input
@@ -89,7 +94,7 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="fourx4" className="input-label">
-                Numbers
+                4 x 4
               </label>
             </div>
             <div className="input">
@@ -101,7 +106,7 @@ const Home = () => {
                 className="input-radio"
               />
               <label htmlFor="sixx6" className="input-label">
-                Numbers
+                6 x 6
               </label>
             </div>
           </div>
