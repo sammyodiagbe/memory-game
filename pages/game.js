@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { gameData } from "../context/game-brain";
 
 const GameScreen = () => {
-  const { board, gridSize } = useContext(gameData);
+  const { board, gridSize, numberOfPlayers, isSolo, soloPlayerMoves } =
+    useContext(gameData);
+
+  console.log(soloPlayerMoves);
 
   const entryStructure = board.map((entry, index) => {
     return (
@@ -29,7 +32,18 @@ const GameScreen = () => {
             {entryStructure}
           </div>
         </section>
-        <footer className="footer"></footer>
+        <footer className="footer">
+          <div className="solo-player">
+            <div className="time">
+              <p>Time</p>
+              <h3>1:53</h3>
+            </div>
+            <div className="time">
+              <p>Moves</p>
+              <h3>{soloPlayerMoves}</h3>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
