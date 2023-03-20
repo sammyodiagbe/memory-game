@@ -5,15 +5,24 @@ const GameScreen = () => {
   const { board, gridSize, numberOfPlayers, isSolo, soloPlayerMoves } =
     useContext(gameData);
 
+  const playInLocation = ({ target }) => {
+    const { cor } = target.dataset;
+    const data = JSON.parse(cor);
+
+    // use the provided co-ordinate to play
+  };
+
   const entryStructure = board.map((entry, index) => {
     return (
       <div className="row" key={index}>
         {entry.map((btn, ind) => {
+          const data = JSON.stringify({ x: ind, y: ind });
           return (
             <button
               className="entry btn"
               key={ind}
-              data-cor={{ x: ind, y: ind }}
+              data-cor={data}
+              onClick={playInLocation}
             ></button>
           );
         })}
