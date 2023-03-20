@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import GameDataProvider from "../context/game-brain";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <GameDataProvider>
+      <Component {...pageProps} />
+    </GameDataProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
