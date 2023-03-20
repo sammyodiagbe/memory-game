@@ -28,7 +28,7 @@ const GameScreen = () => {
           <button className="btn menu-btn">Menu</button>
         </nav>
         <section className="game-board-container">
-          <div className={`board ${gridSize ? "grid4x4" : "grid6x6"}`}>
+          <div className={`board ${gridSize === 4 ? "grid4x4" : "grid6x6"}`}>
             {entryStructure}
           </div>
         </section>

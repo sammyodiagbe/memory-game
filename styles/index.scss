@@ -93,17 +93,28 @@ body {
         align-items: center;
         justify-content: center;
 
-        div.grid4x4,
-        div.grid6x6 {
+        div.board {
+          padding: 0 24px;
           div.row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
             justify-content: space-evenly;
             column-gap: 13px;
+            padding: 5px 0;
+          }
+          &.grid6x6 {
+            div.row {
+              grid-template-columns: repeat(6, 1fr);
+              button.entry {
+                height: 72.53px;
+                width: 72.53px;
+                border-radius: 50vw;
+                background: $more-dark;
+              }
+            }
           }
           &.grid4x4 {
             div.row {
-              padding: 15px 0;
+              grid-template-columns: repeat(4, 1fr);
               button.entry {
                 height: 72.53px;
                 width: 72.53px;
