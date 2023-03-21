@@ -36,17 +36,20 @@ const GameDataProvider = ({ children }) => {
   };
 
   const generateBoard = (dimension) => {
+    console.log("dimension ", dimension);
     const values = dimension === 4 ? [1, 2, 3, 4] : [1, 2, 3, 4, 5, 6];
-    const placeholder = [];
+    let placeholder = [];
     // generating a multidemisional array of size(dimension x dimension)
 
     for (let count = 0; count < dimension; count++) {
-      placeholder.concat(values);
+      placeholder = placeholder.concat(values);
     }
 
     placeholder = shuffleArr(placeholder);
     const board = breakArray(placeholder, dimension);
-    setBoard(arr);
+    console.log("board");
+    console.log(board);
+    setBoard(board);
   };
 
   const breakArray = (arr, dimension) => {
@@ -56,7 +59,7 @@ const GameDataProvider = ({ children }) => {
     }
 
     for (let i = 0; i < arr.length; i++) {
-      const row = math.floor(i / dimension);
+      const row = Math.floor(i / dimension);
       const col = i % dimension;
       newArr[row][col] = arr[i];
     }
