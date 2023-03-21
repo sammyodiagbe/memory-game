@@ -14,7 +14,11 @@ const GameDataProvider = ({ children }) => {
   const [playersMatch, setPlayersMatch] = useState([0, 0, 0, 0]);
   const [soloPlayerMoves, setSoloPlayerMoves] = useState(0);
 
-  const makeSelection = (coordinate) => {};
+  const makeSelection = (coordinate) => {
+    if (firstSelection === null) {
+      firstSelection;
+    }
+  };
 
   const initializeGame = (theme, noOfPlayers, grid) => {
     if (theme !== "Numbers") {
@@ -26,29 +30,45 @@ const GameDataProvider = ({ children }) => {
       setNumberOfPlayers(noOfPlayers);
     }
 
-    let board = grid === 4 ? fourByFour : sixBysix;
+    let board = generateBoard(grid);
     setBoard(board);
     setGridSize(grid);
   };
 
-  const sixBysix = () => {
-    return [
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-    ];
+  const generateBoard = (dimension) => {
+    const values = dimension === 4 ? [1, 2, 3, 4] : [1, 2, 3, 4, 5, 6];
+    const placeholder = [];
+    // generating a multidemisional array of size(dimension x dimension)
+
+    for (let count = 0; count < dimension; count++) {
+      placeholder.concat(values);
+    }
+
+    placeholder = shuffleArr(placeholder);
+    const board = breakArray(placeholder, dimension);
+    setBoard(arr);
   };
 
-  const fourByFour = () => {
-    return [
-      [0, 0, 1, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-    ];
+  const breakArray = (arr, dimension) => {
+    const newArr = [];
+    for (let i = 0; i < dimension; i++) {
+      newArr[i] = [];
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      const row = math.floor(i / dimension);
+      const col = i % dimension;
+      newArr[row][col] = arr[i];
+    }
+    return newArr;
+  };
+
+  const shuffleArr = (arr) => {
+    for (let index = arr.length - 1; index > 0; index--) {
+      const j = Math.floor(Math.random() * (index + 1));
+      [arr[index], arr[j]] = [arr[j], arr[index]];
+    }
+    return arr;
   };
   return (
     <gameData.Provider
@@ -60,6 +80,7 @@ const GameDataProvider = ({ children }) => {
         initializeGame,
         gridSize,
         soloPlayerMoves,
+        makeSelection,
       }}
     >
       {children}

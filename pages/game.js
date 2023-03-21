@@ -2,14 +2,21 @@ import { useContext } from "react";
 import { gameData } from "../context/game-brain";
 
 const GameScreen = () => {
-  const { board, gridSize, numberOfPlayers, isSolo, soloPlayerMoves } =
-    useContext(gameData);
+  const {
+    board,
+    gridSize,
+    numberOfPlayers,
+    makeSelection,
+    isSolo,
+    soloPlayerMoves,
+  } = useContext(gameData);
 
   const playInLocation = ({ target }) => {
     const { cor } = target.dataset;
     const data = JSON.parse(cor);
 
     // use the provided co-ordinate to play
+    makeSelection(data);
   };
 
   const entryStructure = board.map((entry, index) => {
