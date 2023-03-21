@@ -31,7 +31,9 @@ const GameScreen = () => {
                   key={ind}
                   data-cor={data}
                   onClick={playInLocation}
-                ></button>
+                >
+                  {btn}
+                </button>
               );
             })}
           </div>
