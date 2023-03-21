@@ -5,7 +5,7 @@ export const gameData = createContext();
 const GameDataProvider = ({ children }) => {
   const [isSolo, setIsSolo] = useState(true);
   const [useIcon, setUseIcon] = useState(false);
-  const [board, setBoard] = useState(null);
+  const [board, setBoard] = useState([]);
   const [numberOfPlayers, setNumberOfPlayers] = useState(1);
   const [firstSelection, setFirstSelection] = useState(null);
   const [secondSelection, setSecondSelection] = useState(null);
@@ -47,9 +47,7 @@ const GameDataProvider = ({ children }) => {
 
     placeholder = shuffleArr(placeholder);
     const board = breakArray(placeholder, dimension);
-    console.log("board");
-    console.log(board);
-    setBoard(board);
+    return board;
   };
 
   const breakArray = (arr, dimension) => {

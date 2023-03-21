@@ -19,23 +19,25 @@ const GameScreen = () => {
     makeSelection(data);
   };
 
-  const entryStructure = board.map((entry, index) => {
-    return (
-      <div className="row" key={index}>
-        {entry.map((btn, ind) => {
-          const data = JSON.stringify({ x: ind, y: ind });
-          return (
-            <button
-              className="entry btn"
-              key={ind}
-              data-cor={data}
-              onClick={playInLocation}
-            ></button>
-          );
-        })}
-      </div>
-    );
-  });
+  const entryStructure = board
+    ? board.map((entry, index) => {
+        return (
+          <div className="row" key={index}>
+            {entry.map((btn, ind) => {
+              const data = JSON.stringify({ x: ind, y: ind });
+              return (
+                <button
+                  className="entry btn"
+                  key={ind}
+                  data-cor={data}
+                  onClick={playInLocation}
+                ></button>
+              );
+            })}
+          </div>
+        );
+      })
+    : null;
   return (
     <div className="container-game">
       <div className="game-screen">
