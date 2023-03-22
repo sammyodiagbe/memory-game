@@ -10,6 +10,7 @@ const GameScreen = () => {
     isSolo,
     soloPlayerMoves,
     currentPlayer,
+    players,
   } = useContext(gameData);
   const [isFirst, setIsFirst] = useState(false);
 
@@ -84,7 +85,8 @@ const GameScreen = () => {
                       currentPlayer === index + 1 && "turn"
                     }`}
                   >
-                    player {index + 1}
+                    <p> player {index + 1}</p>
+                    <b>{players[index]}</b>
                   </div>
                 );
               })}

@@ -27,6 +27,8 @@ const GameDataProvider = ({ children }) => {
       const { value, x, y } = firstSelection;
       if (newData.value === value) {
         // the user has made a valid selection
+
+        // make sure to increase player'r matches according
         const tempBoard = [...board];
         tempBoard[x][y] = "_";
         tempBoard[row][col] = "_";
@@ -113,6 +115,7 @@ const GameDataProvider = ({ children }) => {
         soloPlayerMoves,
         makeSelection,
         currentPlayer,
+        players,
       }}
     >
       {children}
