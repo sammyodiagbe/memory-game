@@ -28,6 +28,8 @@ const GameDataProvider = ({ children }) => {
         tempBoard[x][y] = "_";
         tempBoard[row][col] = "_";
         setBoard(tempBoard);
+
+        setFirstSelection(null);
         return true;
       }
       setFirstSelection(null);

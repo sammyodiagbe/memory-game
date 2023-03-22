@@ -18,16 +18,14 @@ const GameScreen = () => {
     target.classList.add("flipped");
 
     const check = makeSelection(data);
-    if (check !== null) {
-      if (check === false) {
-        setTimeout(() => {
-          let elements = document.getElementsByClassName("flipped");
-          elements = Array.from(elements);
-          for (let element of elements) {
-            element.classList.remove("flipped");
-          }
-        }, 1500);
-      }
+    if (check === false) {
+      setTimeout(() => {
+        let elements = document.getElementsByClassName("flipped");
+        elements = Array.from(elements);
+        for (let element of elements) {
+          element.classList.remove("flipped");
+        }
+      }, 1500);
     }
   };
 

@@ -113,6 +113,11 @@ body {
             justify-content: space-evenly;
             column-gap: 13px;
             padding: 5px 0;
+
+            button {
+              font-size: 24px;
+              font-weight: bold;
+            }
           }
           &.grid6x6 {
             div.row {
