@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { gameData } from "../context/game-brain";
 
 const GameScreen = () => {
@@ -10,6 +10,7 @@ const GameScreen = () => {
     isSolo,
     soloPlayerMoves,
   } = useContext(gameData);
+  const [isFirst, setIsFirst] = useState(false);
 
   const playInLocation = ({ target }) => {
     const { cor } = target.dataset;
@@ -24,7 +25,7 @@ const GameScreen = () => {
         return (
           <div className="row" key={index}>
             {entry.map((btn, ind) => {
-              const data = JSON.stringify({ x: ind, y: ind });
+              const data = JSON.stringify({ x: index, y: ind });
               return (
                 <button
                   className="entry btn"
