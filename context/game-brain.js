@@ -32,10 +32,19 @@ const GameDataProvider = ({ children }) => {
         const tempBoard = [...board];
         tempBoard[x][y] = "_";
         tempBoard[row][col] = "_";
+
+        if (!isSolo) {
+          let tempArr = [...players];
+          tempArr[currentPlayer - 1] += 1;
+          setPlayers(tempArr);
+        }
         setBoard(tempBoard);
 
         setFirstSelection(null);
         matched = true;
+      } else {
+        let index = currentPlayer >= numberOfPlayers ? 0 : currentPlayer + 1;
+        setCurrentPlayer(index);
       }
       setFirstSelection(null);
       checkGameWinner();
