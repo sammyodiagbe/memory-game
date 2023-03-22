@@ -9,6 +9,7 @@ const GameScreen = () => {
     makeSelection,
     isSolo,
     soloPlayerMoves,
+    currentPlayer,
   } = useContext(gameData);
   const [isFirst, setIsFirst] = useState(false);
 
@@ -63,16 +64,32 @@ const GameScreen = () => {
           </div>
         </section>
         <footer className="footer">
-          <div className="solo-player">
-            <div className="time">
-              <p>Time</p>
-              <h3>1:53</h3>
+          {isSolo ? (
+            <div className="solo-player">
+              <div className="time">
+                <p>Time</p>
+                <h3>1:53</h3>
+              </div>
+              <div className="time">
+                <p>Moves</p>
+                <h3>{soloPlayerMoves}</h3>
+              </div>
             </div>
-            <div className="time">
-              <p>Moves</p>
-              <h3>{soloPlayerMoves}</h3>
+          ) : (
+            <div className="players">
+              {Array.from({ length: numberOfPlayers }).map((_, index) => {
+                return (
+                  <div
+                    className={`player ${
+                      currentPlayer === index + 1 && "turn"
+                    }`}
+                  >
+                    player {index + 1}
+                  </div>
+                );
+              })}
             </div>
-          </div>
+          )}
         </footer>
       </div>
     </div>

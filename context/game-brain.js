@@ -13,6 +13,7 @@ const GameDataProvider = ({ children }) => {
   const [playersMatch, setPlayersMatch] = useState([0, 0, 0, 0]);
   const [soloPlayerMoves, setSoloPlayerMoves] = useState(0);
   const [gameEnded, setGameEnded] = useState(false);
+  const [currentPlayer, setCurrentPlayer] = useState(1);
 
   const makeSelection = (coordinate) => {
     const { x: row, y: col } = coordinate;
@@ -49,12 +50,13 @@ const GameDataProvider = ({ children }) => {
   };
 
   const initializeGame = (theme, noOfPlayers, grid) => {
+    console.log(noOfPlayers);
     if (theme !== "Numbers") {
       setUseIcon(true);
     }
 
     if (noOfPlayers > 1) {
-      setIsSolo(true);
+      setIsSolo(false);
       setNumberOfPlayers(noOfPlayers);
     }
 
@@ -110,6 +112,7 @@ const GameDataProvider = ({ children }) => {
         gridSize,
         soloPlayerMoves,
         makeSelection,
+        currentPlayer,
       }}
     >
       {children}
