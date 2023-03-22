@@ -17,14 +17,18 @@ const GameScreen = () => {
     const data = JSON.parse(cor);
     target.classList.add("flipped");
 
-    makeSelection(data);
-    setTimeout(() => {
-      let elements = document.getElementsByClassName("flipped");
-      elements = Array.from(elements);
-      for (let element of elements) {
-        element.classList.remove("flipped");
+    const check = makeSelection(data);
+    if (check !== null) {
+      if (check === false) {
+        setTimeout(() => {
+          let elements = document.getElementsByClassName("flipped");
+          elements = Array.from(elements);
+          for (let element of elements) {
+            element.classList.remove("flipped");
+          }
+        }, 1500);
       }
-    }, 1500);
+    }
   };
 
   const entryStructure = board
@@ -35,7 +39,7 @@ const GameScreen = () => {
               const data = JSON.stringify({ x: index, y: ind });
               return (
                 <button
-                  className="entry btn"
+                  className={`entry btn ${btn === "_" && "matched"}`}
                   key={ind}
                   data-cor={data}
                   onClick={playInLocation}

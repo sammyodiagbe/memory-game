@@ -26,7 +26,7 @@ const GameDataProvider = ({ children }) => {
         // the user has made a valid selection
         const tempBoard = [...board];
         tempBoard[x][y] = "_";
-        tempBoard[col][row] = "_";
+        tempBoard[row][col] = "_";
         setBoard(tempBoard);
         return true;
       }

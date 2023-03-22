@@ -122,6 +122,11 @@ body {
                 width: 72.53px;
                 border-radius: 50vw;
                 background: $more-dark;
+                color: #fff;
+
+                &.matched {
+                  background: red !important;
+                }
               }
             }
           }
@@ -133,6 +138,11 @@ body {
                 width: 72.53px;
                 border-radius: 50vw;
                 background: $more-dark;
+                color: #fff;
+
+                &.matched {
+                  background: red !important;
+                }
               }
             }
           }
