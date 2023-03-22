@@ -17,7 +17,7 @@ const GameDataProvider = ({ children }) => {
     const { x: row, y: col } = coordinate;
     if (firstSelection === null) {
       setFirstSelection({ value: board[row][col], ...coordinate });
-      return;
+      return null;
     } else {
       // now check the comparison
       const newData = { ...coordinate, value: board[row][col] };
@@ -31,8 +31,8 @@ const GameDataProvider = ({ children }) => {
         return true;
       }
       setFirstSelection(null);
+      return false;
     }
-    return false;
   };
 
   const initializeGame = (theme, noOfPlayers, grid) => {

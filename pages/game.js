@@ -15,9 +15,16 @@ const GameScreen = () => {
   const playInLocation = ({ target }) => {
     const { cor } = target.dataset;
     const data = JSON.parse(cor);
+    target.classList.add("flipped");
 
-    // use the provided co-ordinate to play
     makeSelection(data);
+    setTimeout(() => {
+      let elements = document.getElementsByClassName("flipped");
+      elements = Array.from(elements);
+      for (let element of elements) {
+        element.classList.remove("flipped");
+      }
+    }, 1500);
   };
 
   const entryStructure = board
