@@ -12,9 +12,11 @@ const GameDataProvider = ({ children }) => {
   const [players, setPlayers] = useState([0, 0, 0, 0]);
   const [playersMatch, setPlayersMatch] = useState([0, 0, 0, 0]);
   const [soloPlayerMoves, setSoloPlayerMoves] = useState(0);
+  const [gameEnded, setGameEnded] = useState(false);
 
   const makeSelection = (coordinate) => {
     const { x: row, y: col } = coordinate;
+    let matched = false;
     if (firstSelection === null) {
       setFirstSelection({ value: board[row][col], ...coordinate });
       return null;
@@ -30,11 +32,20 @@ const GameDataProvider = ({ children }) => {
         setBoard(tempBoard);
 
         setFirstSelection(null);
-        return true;
+        matched = true;
       }
       setFirstSelection(null);
-      return false;
+      checkGameWinner();
     }
+    return matched;
+  };
+
+  const checkGameWinner = () => {
+    let tempBoard = [...board];
+    tempBoard = tempBoard.flat();
+
+    const check = tempBoard.every((value) => value === "_");
+    setGameEnded(check);
   };
 
   const initializeGame = (theme, noOfPlayers, grid) => {
