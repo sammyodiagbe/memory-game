@@ -22,6 +22,7 @@ const GameDataProvider = ({ children }) => {
       setFirstSelection({ value: board[row][col], ...coordinate });
       return null;
     } else {
+      if (row === firstSelection.x && col === firstSelection.y) return;
       // now check the comparison
       const newData = { ...coordinate, value: board[row][col] };
       const { value, x, y } = firstSelection;
