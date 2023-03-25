@@ -119,6 +119,48 @@ body div.container-game div.game-screen nav.navigation {
           justify-content: space-between;
 }
 
+body div.container-game div.game-screen nav.navigation div.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+body div.container-game div.game-screen nav.navigation div.menu div.content {
+  background: #fff;
+  padding: 24px 2.5em;
+  border-radius: 8px;
+}
+
+body div.container-game div.game-screen nav.navigation div.menu div.content button.btn {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+  border-radius: 100vh;
+  font-weight: bold;
+  background: #bcced9;
+  padding: 0.7em 1.9em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+body div.container-game div.game-screen nav.navigation div.menu div.content button.btn:nth-child(1) {
+  background-color: #fda214;
+  color: #fff;
+}
+
 body div.container-game div.game-screen nav.navigation button.menu-btn {
   padding: 0.7em 24px;
   background-color: #fda214;

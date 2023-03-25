@@ -92,6 +92,39 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        div.menu {
+          position: fixed;
+          left: 0;
+          top: 0;
+          height: 100vh;
+          width: 100vw;
+          background-color: rgba(0, 0, 0, 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1;
+          div.content {
+            background: #fff;
+            padding: $padding 2.5em;
+            border-radius: 8px;
+            button.btn {
+              &:nth-child(1) {
+                background-color: $yellowish-color;
+                color: #fff;
+              }
+              display: block;
+              margin-bottom: $padding;
+              width: 100%;
+              border-radius: 100vh;
+              font-weight: bold;
+              background: $grey;
+              padding: 0.7em 1.9em;
+              font-weight: bold;
+              font-size: 1em;
+            }
+          }
+        }
         button.menu-btn {
           padding: 0.7em $padding;
           background-color: $yellowish-color;

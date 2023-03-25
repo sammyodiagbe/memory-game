@@ -58,6 +58,13 @@ const GameScreen = () => {
         <nav className="navigation">
           <h2>Memory</h2>
           <button className="btn menu-btn">Menu</button>
+          <div className="menu">
+            <div className="content">
+              <button className="btn action-btn">Restart</button>
+              <button className="btn action-btn">New Game</button>
+              <button className="btn action-btn">Resume Game</button>
+            </div>
+          </div>
         </nav>
         <section className="game-board-container">
           <div className={`board ${gridSize === 4 ? "grid4x4" : "grid6x6"}`}>
