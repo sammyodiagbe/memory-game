@@ -13,6 +13,7 @@ const GameScreen = () => {
     players,
   } = useContext(gameData);
   const [isFirst, setIsFirst] = useState(false);
+  const [menu, showMenu] = useState(false);
 
   const playInLocation = ({ target }) => {
     const { cor } = target.dataset;
@@ -52,19 +53,32 @@ const GameScreen = () => {
         );
       })
     : null;
+
+  const restartGame = () => {};
+  const resumeGame = () => {
+    showMenu(false);
+  };
   return (
     <div className="container-game">
       <div className="game-screen">
         <nav className="navigation">
           <h2>Memory</h2>
-          <button className="btn menu-btn">Menu</button>
-          <div className="menu">
-            <div className="content">
-              <button className="btn action-btn">Restart</button>
-              <button className="btn action-btn">New Game</button>
-              <button className="btn action-btn">Resume Game</button>
+          <button className="btn menu-btn" onClick={() => showMenu(true)}>
+            Menu
+          </button>
+          {menu && (
+            <div className="menu">
+              <div className="content">
+                <button className="btn action-btn" onClick={restartGame}>
+                  Restart
+                </button>
+                <button className="btn action-btn">New Game</button>
+                <button className="btn action-btn" onClick={resumeGame}>
+                  Resume Game
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </nav>
         <section className="game-board-container">
           <div className={`board ${gridSize === 4 ? "grid4x4" : "grid6x6"}`}>
