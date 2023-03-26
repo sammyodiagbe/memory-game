@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { gameData } from "../context/game-brain";
+import Icon from "./components/icon";
 
 const GameScreen = () => {
   const {
@@ -11,6 +12,7 @@ const GameScreen = () => {
     soloPlayerMoves,
     currentPlayer,
     players,
+    useIcon,
   } = useContext(gameData);
   const [isFirst, setIsFirst] = useState(false);
   const [menu, showMenu] = useState(false);
@@ -45,7 +47,7 @@ const GameScreen = () => {
                   data-cor={data}
                   onClick={playInLocation}
                 >
-                  {btn}
+                  {useIcon ? <Icon value={btn} /> : btn}
                 </button>
               );
             })}

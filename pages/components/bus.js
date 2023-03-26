@@ -15,7 +15,7 @@ const BusIcon = () => {
       />
       <mask
         id="mask0_0_3409"
-        style="mask-type:luminance"
+        style={{ maskType: "luminance" }}
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"

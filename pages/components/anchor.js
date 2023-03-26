@@ -15,7 +15,7 @@ const AnchorIcon = () => {
       />
       <mask
         id="mask0_0_3400"
-        style="mask-type:luminance"
+        style={{ maskType: "luminance" }}
         maskUnits="userSpaceOnUse"
         x="0"
         y="3"
