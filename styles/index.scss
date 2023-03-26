@@ -9,6 +9,18 @@
   box-sizing: border-box;
 }
 
+svg {
+  width: 30px;
+  height: 30px;
+  path,
+  g {
+    fill: #fff;
+    rect {
+      fill: #fff;
+    }
+  }
+}
+
 body {
   font-size: 18px;
   font-family: "Atkinson Hyperlegible", sans-serif;
@@ -163,7 +175,7 @@ body {
                 color: #fff;
 
                 &.matched {
-                  background: red !important;
+                  background: $yellowish-color !important;
                 }
               }
             }
@@ -179,7 +191,7 @@ body {
                 color: #fff;
 
                 &.matched {
-                  background: red !important;
+                  background: $yellowish-color !important;
                 }
               }
             }

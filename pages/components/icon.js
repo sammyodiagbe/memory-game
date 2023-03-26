@@ -3,6 +3,7 @@ import BusIcon from "./bus";
 import CarIcon from "./car";
 import FutBolIcon from "./futbol";
 import SunIcon from "./sun";
+import SnowIcon from "./snowFlakes";
 
 const Icon = ({ value }) => {
   return value == 1 ? (
@@ -16,7 +17,7 @@ const Icon = ({ value }) => {
   ) : value === 5 ? (
     <BusIcon />
   ) : (
-    <SunIcon />
+    <SnowIcon />
   );
 };
 

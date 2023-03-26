@@ -8,6 +8,21 @@
           box-sizing: border-box;
 }
 
+svg {
+  width: 30px;
+  height: 30px;
+}
+
+svg path,
+svg g {
+  fill: #fff;
+}
+
+svg path rect,
+svg g rect {
+  fill: #fff;
+}
+
 body {
   font-size: 18px;
   font-family: "Atkinson Hyperlegible", sans-serif;
@@ -216,7 +231,7 @@ body div.container-game div.game-screen section.game-board-container div.board.g
 }
 
 body div.container-game div.game-screen section.game-board-container div.board.grid6x6 div.row button.entry.matched {
-  background: red !important;
+  background: #fda214 !important;
 }
 
 body div.container-game div.game-screen section.game-board-container div.board.grid4x4 div.row {
@@ -233,7 +248,7 @@ body div.container-game div.game-screen section.game-board-container div.board.g
 }
 
 body div.container-game div.game-screen section.game-board-container div.board.grid4x4 div.row button.entry.matched {
-  background: red !important;
+  background: #fda214 !important;
 }
 
 body div.container-game div.game-screen footer.footer {

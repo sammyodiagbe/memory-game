@@ -17,10 +17,12 @@ const GameScreen = () => {
   const [isFirst, setIsFirst] = useState(false);
   const [menu, showMenu] = useState(false);
 
-  const playInLocation = ({ target }) => {
-    const { cor } = target.dataset;
+  const playInLocation = ({ currentTarget }) => {
+    console.log(currentTarget);
+    const { cor } = currentTarget.dataset;
+    console.log(cor);
     const data = JSON.parse(cor);
-    target.classList.add("flipped");
+    currentTarget.classList.add("flipped");
 
     const check = makeSelection(data);
     if (check === false) {
@@ -40,6 +42,7 @@ const GameScreen = () => {
           <div className="row" key={index}>
             {entry.map((btn, ind) => {
               const data = JSON.stringify({ x: index, y: ind });
+              console.log(data);
               return (
                 <button
                   className={`entry btn ${btn === "_" && "matched"}`}
