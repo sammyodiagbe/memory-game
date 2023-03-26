@@ -31,8 +31,8 @@ const GameDataProvider = ({ children }) => {
 
         // make sure to increase player'r matches according
         const tempBoard = [...board];
-        tempBoard[x][y] = "_";
-        tempBoard[row][col] = "_";
+        tempBoard[x][y] = value.toString();
+        tempBoard[row][col] = value.toString();
 
         if (!isSolo) {
           let tempArr = [...players];

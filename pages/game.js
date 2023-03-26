@@ -45,7 +45,9 @@ const GameScreen = () => {
               console.log(data);
               return (
                 <button
-                  className={`entry btn ${btn === "_" && "matched"}`}
+                  className={`entry btn ${
+                    btn.toString() === board[index][ind] && "matched"
+                  }`}
                   key={ind}
                   data-cor={data}
                   onClick={playInLocation}
